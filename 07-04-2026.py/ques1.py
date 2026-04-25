@@ -5,14 +5,16 @@ class Book:
         self.author = author
         self.isbn = isbn
         self.is_available = True
-
+        
+    #display book information
     def display_info(self):
         status = "Available" if self.is_available else "Not Available"
         print("Title:", self.title)
         print("Author:", self.author)
         print("ISBN:", self.isbn)
         print("Status:", status)
-
+ 
+    #check out the book
     def check_out(self):
         if self.is_available:
             self.is_available = False
@@ -20,6 +22,7 @@ class Book:
         else:
             print(f'"{self.title}" is already checked out.')
 
+    #return the book
     def return_book(self):
         self.is_available = True
         print(f'"{self.title}" has been returned.')
